@@ -6,6 +6,7 @@
   <li>
     {{ message.publication_date }}
     <a href="{% url 'msg_view' message.id %}">{{ message.subject }}</a>
+    -<a href="{% url 'msg_delete' message.id %}">刪除</a>
   </li>
   {% endfor %}
 </ul>
