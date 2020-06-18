@@ -6,7 +6,9 @@
   <li>
     {{ message.publication_date }}
     <a href="{% url 'msg_view' message.id %}">{{ message.subject }}</a>
-    -<a href="{% url 'msg_delete' message.id %}">刪除</a>
+    {% if user.is_authenticated%}
+    <a href="{% url 'msg_delete' message.id %}">刪除</a>
+    {% endif %}
   </li>
   {% endfor %}
 </ul>
